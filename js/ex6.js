@@ -1,29 +1,59 @@
-console.log(" playing around chap 6");
+console.log(" HW 6 ex 6 - create a mini dictionalry");
 
-// Show the "Wonders from Antiquity" h2 element
-console.log(document.body.childNodes[11].childNodes[1]);
-console.log(document.body.childNodes[11].childNodes[3].textContent);
-console.log(document.body.childNodes[11].childNodes[5].childNodes[3]);
+//array provided
+const words = [
+  {
+    term: "Procrastination",
+    definition: "Avoidance of doing a task that needs to be accomplished",
+  },
+  {
+    term: "Tautology",
+    definition:
+      "logical argument constructed in such a way that it is logically irrefutable",
+  },
+  {
+    term: "Oxymoron",
+    definition:
+      "figure of speech that juxtaposes elements that appear to be contradictory",
+  },
+];
 
+//testing and providing visual map to DOM
+console.log(document.body.childNodes);
+console.log(document.getElementById("content"));
 
-// Get all h2 elements into an array
-const titleElements = document.getElementsByTagName("h2");
-const titleElementsh1 = document.getElementsByTagName("h1");
+//added forloop to generate #s
+let maxrows = words.length;
 
-console.log(titleElements[0]);     // Show the first h2
-console.log(titleElements[1]);     // Show the first h2
-console.log(titleElements[2]);     // Show the first h2
-console.log(titleElements[3]);     // Show the first h2
-console.log(titleElements.length); // 4 (total number of h2 elements in the page)
+for (x = 0; x < maxrows; ++x) {
+  const newElement = document.createElement("li");
+  const newElement2 = document.createElement("li");
+  newElement.innerText = words[x].term;
+  newElement2.innerText = words[x].definition;
+  newElement.style.width = "80px";
 
-console.log(titleElementsh1[0]);     // Show the first h1
-console.log(titleElementsh1[1]);     // Show the first h1
-console.log(titleElementsh1.length); // 2 (total number of h1 elements in the page)
+  //switch to manage bolding of Term
+  switch (x) {
+    case 0:
+      console.log("case 1", x);
+      newElement.style.fontWeight = "bold";
+      break;
+    case 1:
+      console.log("case 2", x);
+      newElement.style.fontWeight = "bold";
+      break;
+    case 2:
+      console.log("case 3", x);
+      newElement.style.fontWeight = "bold";
+      break;
 
-// Show all elements that have the class "exists"
-const existingElements = Array.from(document.getElementsByClassName("exists"));
-existingElements.forEach(element => {
-  console.log(element);
-});
-console.log(existingElements);
-
+    default:
+  }
+//inserting the term and definition (its a miracle I got this done :-)
+  document
+    .getElementById("content")
+    .insertBefore(newElement, document.getElementById(""));
+  document
+    .getElementById("content")
+    .insertBefore(newElement2, document.getElementById(""));
+}
