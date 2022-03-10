@@ -26,11 +26,12 @@ console.log(document.getElementById("content"));
 let maxrows = words.length;
 
 for (x = 0; x < maxrows; ++x) {
-  const newElement = document.createElement("li");
-  const newElement2 = document.createElement("li");
+  const newElement = document.createElement("dl");
+  const newElement2 = document.createElement("dl");
   newElement.innerText = words[x].term;
   newElement2.innerText = words[x].definition;
   newElement.style.width = "80px";
+  newElement2.style.textIndent = "30px";
 
   //switch to manage bolding of Term
   switch (x) {

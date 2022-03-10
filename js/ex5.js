@@ -8,7 +8,7 @@ console.log(document.getElementsByTagName("li"));
 let maxrows=13
 
 for (x=1; x<maxrows; ++x) {
-    const newElement = document.createElement("li"); 
+    const newElement = document.createElement("div"); 
     newElement.style="text-align:center;border-style: solid;";
     newElement.innerHTML = x;
     newElement.style.width = "80px";
